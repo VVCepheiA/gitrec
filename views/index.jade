@@ -1,1 +1,203 @@
-include index.html
+doctype html
+head
+
+    |     
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    |     
+    meta(name='description', content='')
+    |     
+    meta(name='author', content='')
+    |     
+    title GitRec - Smart Recommendations for Open Source Projects
+    // Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='/stylesheets/freelancer.css', rel='stylesheet')
+    // Custom Fonts
+    link(href='/stylesheets/font-awesome.css', rel='stylesheet', type='text/css')
+    |     
+    link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+    |     
+    link(href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      |         
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+html
+  body#page-top.index
+    // Navigation
+    nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header.page-scroll
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+      // /.container-fluid
+    // Header
+    header
+      .container
+        .row
+          .col-lg-12
+            img.img-responsive(src='/images/logo.png', alt='')
+            |                     
+            .intro-text
+              h2
+                | Recommendations to Help You 
+                br
+                |  Find Projects You Care About
+              |                         
+              hr.star-light
+              |                         
+              span.skills
+                | We use clustering and collaborative filtering to predict some of the best projects based on your github development experience - so you don&apos;t have to waste time finding an open source projects you love.
+              |                           
+              br
+              |                           
+              h2
+                p
+    // Portfolio Grid Section
+    section#portfolio
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 TELL US A LITTLE BIT ABOUT YOURSELF
+            |                     
+            hr.star-primary
+            form.form-horizontal(action='', method='POST', role='form')
+              fieldset
+                .control-group
+                  label.control-label(for='textinput')
+                    h3 Enter Git ID:
+                  |   
+                  .controls
+                    input#textinput.input-xlarge(name='gitID', type='text', placeholder='Ex: user123')
+                br
+                .control-group
+                  .controls
+                    button(name='singlebutton', type='submit')#singlebutton.btn.btn-primary Submit
+    // About Section
+    section#about.success
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 Our Suggestions
+            |                     
+            hr.star-primary
+        |             
+        .row
+          .col-sm-6.portfolio-item
+            a.portfolio-link(href='#portfolioModal1', data-toggle='modal')
+              .caption
+                .caption-content
+                  i.fa.fa-search-plus.fa-3x
+              |                         
+              img.img-responsive(src='/images/portfolio/cake.png', alt='')
+          |                 
+          .col-sm-6.portfolio-item
+            a.portfolio-link(href='#portfolioModal2', data-toggle='modal')
+              .caption
+                .caption-content
+                  i.fa.fa-search-plus.fa-3x
+              |                         
+              img.img-responsive(src='/images/portfolio/cake.png', alt='')
+    // Contact Section
+    section#contact
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 Find Other Developers Near You
+            |                     
+            hr.star-primary
+        |             
+        .row
+          .col-lg-8.col-lg-offset-2
+            center
+              p
+              h3
+                | Find out how popular open source projects are in your area by exploring the map below! 
+                br
+                |  Consider having a meetup in your city!
+              |                     
+              h6
+                | *Search for your country or city below and see how engaged your community is on github.
+              |                     
+              p
+            |                    
+            br
+            |                    
+            iframe(width='100%', height='520', frameborder='0', src='http://cr425.cartodb.com/viz/611d7e56-c565-11e4-8447-0e853d047bba/embed_map', allowfullscreen='', webkitallowfullscreen='', mozallowfullscreen='', oallowfullscreen='', msallowfullscreen='')
+    // Footer
+    footer.text-center
+      .footer-above
+        .container
+          .row
+            .footer-col.col-md-4
+              h3 Location
+              |                         
+              p
+                | Cornell Tech Campus
+                br
+                | 14th &amp; 8th Avenue, NY, NY
+            |                     
+            .footer-col.col-md-4
+              h3 Around the Web
+              //- |                         
+              //- ul.list-inline
+              //-   li
+              //-     a.btn-social.btn-outline(href='#')
+              //-       i.fa.fa-fw.fa-facebook
+              //-   |                             
+              //-   li
+              //-     a.btn-social.btn-outline(href='#')
+              //-       i.fa.fa-fw.fa-google-plus
+              //-   |                             
+              //-   li
+              //-     a.btn-social.btn-outline(href='#')
+              //-       i.fa.fa-fw.fa-twitter
+              //-   |                             
+              //-   li
+              //-     a.btn-social.btn-outline(href='#')
+              //-       i.fa.fa-fw.fa-linkedin
+              //-   |                             
+              //-   li
+              //-     a.btn-social.btn-outline(href='#')
+              //-       i.fa.fa-fw.fa-dribbble
+            |                     
+            .footer-col.col-md-4
+              h3 About GitRec*
+              |                         
+              p GitRec* was a small born out of the Cornell Data Science Hackathon in 2015.
+      |         
+      .footer-below
+        .container
+          .row
+            .col-lg-12
+              | Copyright &copy; GitRec*
+
+
+    // jQuery
+    script(src='/javascripts/jquery.js')
+    // Bootstrap Core JavaScript
+    script(src='/javascripts/bootstrap.min.js')
+    // Plugin JavaScript
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
+    |     
+    script(src='/javascripts/classie.js')
+    |     
+    script(src='/javascripts/cbpAnimatedHeader.js')
+    // Contact Form JavaScript
+    script(src='/javascripts/jqBootstrapValidation.js')
+    |     
+    script(src='/javascripts/contact_me.js')
+    // Custom Theme JavaScript
+    script(src='/javascripts/freelancer.js')
