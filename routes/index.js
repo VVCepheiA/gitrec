@@ -16,11 +16,15 @@ router.post('/', function(req, res, next) {
 
 router.get('/api/:gitid', function(req, res, next) {
   var gitid = req.params.gitid;
-  Matrix.find({"p1id": gitid}, function(err, matrixes) {
+  Matrix.find({"p1id": gitid})
+    .sort('-jaccard')
+    .limit(10)
+    .exec(function(err, matrixes) {
     if (err) {
       return res.send(err);
     }
-    res.json(matrixes);
+    //res.json(matrixes);
+    res.render('result', { title: 'Express', matrixes: matrixes });
   });
 
   //res.send(gitid);
