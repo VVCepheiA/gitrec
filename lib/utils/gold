@@ -1,0 +1,8 @@
+sed 's/$/,/g' 2015-03-06-0.json > 2015-03-06-0-parse.json 
+
+
+mongo gitrec --eval "db.dropDatabase()"
+
+
+
+mongoexport --csv --host localhost:27017 --db gitrec --collection activities --fields act_id,type,actor_login,repo_name,createdAt -o output.csv
