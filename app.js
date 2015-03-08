@@ -8,6 +8,12 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+//DB
+var mongoose = require('mongoose');
+var dbName = 'gitrec';
+var connectionString = 'mongodb://localhost:27017/' + dbName;
+mongoose.connect(connectionString);
+
 var app = express();
 
 // view engine setup
