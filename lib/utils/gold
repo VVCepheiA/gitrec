@@ -5,4 +5,8 @@ mongo gitrec --eval "db.dropDatabase()"
 
 
 
-mongoexport --csv --host localhost:27017 --db gitrec --collection activities --fields act_id,type,actor_login,repo_name,createdAt -o output.csv
+mongoexport --csv --host localhost:27017 --db gitrec --collection activities --fields act_id,type,actor_login,repo_name,createdAt -o activity.csv
+
+mongoexport --csv --host localhost:27017 --db gitrec --collection users --fields user_id,username,repos -o users.csv
+
+mongoexport --csv --host localhost:27017 --db gitrec --collection repositories --fields id,ownerid,size,name,follow,star,fork,language -o repository.csv
