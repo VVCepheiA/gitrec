@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Matrix = require('../../models/matrix');
+var Matrix = require('../models/matrix');
 
 
 /* GET home page. */
@@ -16,9 +16,14 @@ router.post('/', function(req, res, next) {
 
 router.get('/api/:gitid', function(req, res, next) {
   var gitid = req.params.gitid;
-  
+  Matrix.find({"p1id": gitid}, function(err, matrixes) {
+    if (err) {
+      return res.send(err);
+    }
+    res.json(matrixes);
+  });
 
-  res.send(gitid);
+  //res.send(gitid);
 });
 
 module.exports = router;
